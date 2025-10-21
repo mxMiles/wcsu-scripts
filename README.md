@@ -42,3 +42,7 @@ Set of scripts to automate the updating of archviesspace. To use:
 1. update config.sh to reflect latest versions
 2. run install_new_version.sh
 3. run start_new_release.sh
+
+## omeka_s_harvester.py & omeka_s_grabFromCSV.py
+Pair of scripts to export digital objects from Omeka-S, then shove them into ArchivesSpace. Warning: this is when I discovered emojis. I believe they make it easier to quickly scan log output :P
+
