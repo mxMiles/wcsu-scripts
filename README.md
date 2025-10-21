@@ -45,4 +45,5 @@ Set of scripts to automate the updating of archviesspace. To use:
 
 ## omeka_s_harvester.py & omeka_s_grabFromCSV.py
 Pair of scripts to export digital objects from Omeka-S, then shove them into ArchivesSpace. Warning: this is when I discovered emojis. I believe they make it easier to quickly scan log output :P
-
+suggested crontab:
+> 00 12 * * * python3 omeka_s_harvester.py; python2 /home/archivesspace/omeka_s_grabFromCSV.py
