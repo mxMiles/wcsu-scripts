@@ -1,5 +1,0 @@
-30 * * * *  ~/scripts/stripDatesAndEvents.sh
-0 * * * *  ~/scripts/stripDatesAndEvents.sh
-@reboot    sleep  30 && /home/arclight/solr-8.5.0Working/bin/solr start
-@reboot    sleep  60 && source ~/.bash_profile && cd arclight &&  rails s -d
-01 * * * * curl https://archives-library.wcsu.edu/cao/cao-nav/ >/home/arclight/arclight/app/views/shared/_wordpress_nav_test.html.erb.temp; sed -n '/<!-- BEGIN header -->/,$p' /home/arclight/arclight/app/views/shared/_wordpress_nav_test.html.erb.temp >/home/arclight/arclight/app/views/shared/_wordpress_nav_test.html.erb.temp2; sed -n '/.*<!-- END header -->.*/q;p' /home/arclight/arclight/app/views/shared/_wordpress_nav_test.html.erb.temp2>/home/arclight/arclight/app/views/shared/_wordpress_nav_test.html.erb

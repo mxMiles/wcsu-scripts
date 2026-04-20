@@ -3,7 +3,6 @@
 #######################  Variables ############################
 
 # Source common variables
-# source newRepoConfig.sh
 
 NEW_REPO=$1 #reads first input from commandline
 
@@ -31,8 +30,8 @@ echo "Creating the CSV contents of staticData"
 touch /var/www/html/arclight/data/ead/$NEW_REPO/staticData/subjects.csv
 touch /var/www/html/arclight/data/ead/$NEW_REPO/staticData/collections.csv
 
-echo "Changing ownership of all this stuff to our friend apache"
-chown -R apache:apache /var/www/html/arclight/data/ead/$NEW_REPO
+echo "Changing ownership of all this stuff to our friend www-data"
+chown -R www-data:www-data /var/www/html/arclight/data/ead/$NEW_REPO
 chmod -R g+rwx /var/www/html/arclight/data/ead/$NEW_REPO
 
 echo "Open repository yml template and copy repo info into /home/arclight/arclight/config/repositories.yml and follow directions to create a webdav account and pw"
