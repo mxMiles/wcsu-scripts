@@ -13,15 +13,16 @@ import json
 from asnake.client import ASnakeClient
 import asnake.logging as logging
 
+
 print ("\tConnecting to ArchivesSpace")
-client = ASnakeClient(baseurl="http://localhost:####",
-                      username="#####",
-                      password="#####")
+client = ASnakeClient(baseurl="http://localhost:8092",
+                      username="xxxx",
+                      password="xxxx")
 client.authorize()
 
 logging.setup_logging(stream=sys.stdout, level='INFO')
 
-with open('omeka_s_items_output.csv', mode='r') as csv_file:
+with open('/home/archivesspace/omeka_s_items_output.csv', mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     line_count = 0
     for row in csv_reader:
@@ -30,7 +31,8 @@ with open('omeka_s_items_output.csv', mode='r') as csv_file:
 
         # skip items from wrong omeka-s site
         site=str(row['o:site'])
-        if site=='http://ruth.wcsu.edu/omeka-s/api/sites/1':
+
+        if site=='https://archives.library.wcsu.edu/omeka-s/api/sites/1':
                 title=str(row['dcterms:title'])
                 identifier=str(row['dcterms:identifier'])
                 urlRaw=str(row['public_url'])
@@ -51,5 +53,5 @@ with open('omeka_s_items_output.csv', mode='r') as csv_file:
 
                 print(json.dumps(data))
         else: 
-                print("💥 skipping because item is from the wrong site (this is fine)")
-      
+                print(f"DEBUG:  Actual site: '{site}'")
+                print("skipping because item is from the wrong site (this is fine)")
